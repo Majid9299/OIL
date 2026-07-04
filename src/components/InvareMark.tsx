@@ -11,10 +11,10 @@ interface InvareMarkProps {
 // icon-only usage; withWordmark skips the crop and shows the full lockup.
 const LOGO_NATURAL_WIDTH = 3721;
 const LOGO_NATURAL_HEIGHT = 3043;
-const ICON_LEFT_FRACTION = 0.415;
-const ICON_RIGHT_FRACTION = 0.565;
-const ICON_TOP_FRACTION = 0.11;
-const ICON_BOTTOM_FRACTION = 0.505;
+const ICON_LEFT_FRACTION = 0.425;
+const ICON_RIGHT_FRACTION = 0.575;
+const ICON_TOP_FRACTION = 0.14;
+const ICON_BOTTOM_FRACTION = 0.52;
 
 export function InvareMark({ size = 32, withWordmark = false, className }: InvareMarkProps) {
   if (withWordmark) {
