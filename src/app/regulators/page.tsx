@@ -5,6 +5,8 @@ import Link from "next/link";
 import dynamic from "next/dynamic";
 import { InvareMark } from "@/components/InvareMark";
 import { PortalSwitcher } from "@/components/PortalSwitcher";
+import { LanguageToggle } from "@/components/shared/LanguageToggle";
+import { useLanguage } from "@/components/shared/LanguageProvider";
 import { CompanyCard } from "@/components/regulators/CompanyCard";
 import { useObjections } from "@/components/shared/ObjectionsProvider";
 import { usePickupRequests } from "@/components/shared/PickupRequestsProvider";
@@ -35,6 +37,7 @@ const PERMIT_LABELS: Record<PermitStatus, string> = {
 };
 
 export default function RegulatorsPage() {
+  const { t } = useLanguage();
   const { objections } = useObjections();
   const { requests } = usePickupRequests();
   const [governorate, setGovernorate] = useState<string>("الكل");
@@ -101,9 +104,12 @@ export default function RegulatorsPage() {
     <div className="flex min-h-screen flex-col bg-neutral-50">
       <div className="flex items-center justify-between border-b border-neutral-200 bg-white px-5 py-3 print:hidden">
         <Link href="/" className="text-sm font-semibold text-neutral-400">
-          ← الرئيسية
+          {t("common.home")}
         </Link>
-        <InvareMark size={30} />
+        <div className="flex items-center gap-2">
+          <InvareMark size={30} />
+          <LanguageToggle />
+        </div>
       </div>
       <PortalSwitcher />
 

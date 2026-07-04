@@ -7,6 +7,8 @@ interface PortalCardProps {
   icon: string;
   accent: string;
   available: boolean;
+  enterLabel?: string;
+  comingSoonLabel?: string;
 }
 
 export function PortalCard({
@@ -16,6 +18,8 @@ export function PortalCard({
   icon,
   accent,
   available,
+  enterLabel = "الدخول إلى البوابة ←",
+  comingSoonLabel = "قريبًا",
 }: PortalCardProps) {
   const content = (
     <div
@@ -35,11 +39,11 @@ export function PortalCard({
       <div className="flex items-center gap-2 text-sm font-semibold">
         {available ? (
           <span className="text-brand-700" style={{ color: accent }}>
-            الدخول إلى البوابة ←
+            {enterLabel}
           </span>
         ) : (
           <span className="rounded-full bg-neutral-100 px-3 py-1 text-xs font-medium text-neutral-400">
-            قريبًا
+            {comingSoonLabel}
           </span>
         )}
       </div>

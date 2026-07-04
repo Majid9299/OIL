@@ -4,6 +4,7 @@ import "./globals.css";
 import { PickupRequestsProvider } from "@/components/shared/PickupRequestsProvider";
 import { ObjectionsProvider } from "@/components/shared/ObjectionsProvider";
 import { WalletProvider } from "@/components/shared/WalletProvider";
+import { LanguageProvider } from "@/components/shared/LanguageProvider";
 
 const cairo = Cairo({
   variable: "--font-cairo",
@@ -25,11 +26,13 @@ export default function RootLayout({
   return (
     <html lang="ar" dir="rtl" className={`${cairo.variable} h-full`}>
       <body className="min-h-full flex flex-col bg-neutral-50 text-neutral-900 antialiased">
-        <WalletProvider>
-          <PickupRequestsProvider>
-            <ObjectionsProvider>{children}</ObjectionsProvider>
-          </PickupRequestsProvider>
-        </WalletProvider>
+        <LanguageProvider>
+          <WalletProvider>
+            <PickupRequestsProvider>
+              <ObjectionsProvider>{children}</ObjectionsProvider>
+            </PickupRequestsProvider>
+          </WalletProvider>
+        </LanguageProvider>
       </body>
     </html>
   );

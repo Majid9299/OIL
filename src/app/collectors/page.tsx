@@ -5,6 +5,8 @@ import { useRouter } from "next/navigation";
 import dynamic from "next/dynamic";
 import { InvareMark } from "@/components/InvareMark";
 import { PortalSwitcher } from "@/components/PortalSwitcher";
+import { LanguageToggle } from "@/components/shared/LanguageToggle";
+import { useLanguage } from "@/components/shared/LanguageProvider";
 import { CollectorRoleSwitcher } from "@/components/collectors/CollectorRoleSwitcher";
 import { CollectorTopActions } from "@/components/collectors/CollectorTopActions";
 import { PickupRequestCard } from "@/components/collectors/PickupRequestCard";
@@ -40,6 +42,7 @@ function permitBadge(status: typeof CURRENT_COLLECTOR.permitStatus) {
 
 export default function CollectorsPage() {
   const router = useRouter();
+  const { t } = useLanguage();
   const { vehicles } = useCollectorData();
   const { requests, completeRequest } = usePickupRequests();
   const { releaseFrozenSplit } = useWallet();
@@ -75,9 +78,12 @@ export default function CollectorsPage() {
     <div className="flex min-h-screen flex-col bg-neutral-50">
       <div className="flex items-center justify-between border-b border-neutral-200 bg-white px-5 py-3">
         <Link href="/" className="text-sm font-semibold text-neutral-400">
-          ← الرئيسية
+          {t("common.home")}
         </Link>
-        <InvareMark size={30} />
+        <div className="flex items-center gap-2">
+          <InvareMark size={30} />
+          <LanguageToggle />
+        </div>
       </div>
       <PortalSwitcher />
       <div className="flex justify-center border-b border-neutral-200 bg-white px-5 py-2.5">

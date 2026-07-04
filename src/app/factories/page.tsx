@@ -3,6 +3,8 @@
 import Link from "next/link";
 import { InvareMark } from "@/components/InvareMark";
 import { PortalSwitcher } from "@/components/PortalSwitcher";
+import { LanguageToggle } from "@/components/shared/LanguageToggle";
+import { useLanguage } from "@/components/shared/LanguageProvider";
 import { FactoryTopActions } from "@/components/factories/FactoryTopActions";
 import { BatchCard } from "@/components/factories/BatchCard";
 import { useFactoryData } from "@/components/factories/FactoryDataProvider";
@@ -12,6 +14,7 @@ import { OilBatch } from "@/lib/types";
 import { calculateStandardDeal } from "@/lib/commission";
 
 export default function FactoriesPage() {
+  const { t } = useLanguage();
   const { batches, acceptBatch, rejectBatch, markObjected } = useFactoryData();
   const { freeze, releaseFrozenSplit } = useWallet();
 
@@ -55,9 +58,12 @@ export default function FactoriesPage() {
     <div className="flex min-h-screen flex-col bg-neutral-50">
       <div className="flex items-center justify-between border-b border-neutral-200 bg-white px-5 py-3">
         <Link href="/" className="text-sm font-semibold text-neutral-400">
-          ← الرئيسية
+          {t("common.home")}
         </Link>
-        <InvareMark size={30} />
+        <div className="flex items-center gap-2">
+          <InvareMark size={30} />
+          <LanguageToggle />
+        </div>
       </div>
       <PortalSwitcher />
       <FactoryTopActions />
