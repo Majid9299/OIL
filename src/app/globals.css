@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+:root {
+  --background: #fafaf9;
+  --foreground: #1c1917;
+
+  /* Brand — from the Invare mark (teal ribbon = primary action color) */
+  --color-brand-50: #eaf7fa;
+  --color-brand-100: #cdedf3;
+  --color-brand-500: #4ba9c7;
+  --color-brand-600: #2e8aa8;
+  --color-brand-700: #226e87;
+  --color-brand-900: #163f4d;
+
+  /* Invare mark accent colors (purple + lime ribbons, gray wordmark) */
+  --color-invare-purple: #9b6bb0;
+  --color-invare-lime: #b0c93c;
+  --color-invare-gray: #808080;
+
+  /* Material categories */
+  --color-oil: #d97706;
+  --color-plastic: #2563eb;
+  --color-metal: #64748b;
+  --color-electronics: #7c3aed;
+  --color-paper: #ea580c;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-cairo);
+
+  --color-brand-50: var(--color-brand-50);
+  --color-brand-100: var(--color-brand-100);
+  --color-brand-500: var(--color-brand-500);
+  --color-brand-600: var(--color-brand-600);
+  --color-brand-700: var(--color-brand-700);
+  --color-brand-900: var(--color-brand-900);
+
+  --color-invare-purple: var(--color-invare-purple);
+  --color-invare-lime: var(--color-invare-lime);
+  --color-invare-gray: var(--color-invare-gray);
+
+  --color-oil: var(--color-oil);
+  --color-plastic: var(--color-plastic);
+  --color-metal: var(--color-metal);
+  --color-electronics: var(--color-electronics);
+  --color-paper: var(--color-paper);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-cairo), Arial, Helvetica, sans-serif;
+}
