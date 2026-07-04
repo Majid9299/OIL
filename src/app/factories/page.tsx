@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { InvareMark } from "@/components/InvareMark";
+import { PortalSwitcher } from "@/components/PortalSwitcher";
 import { FactoryTopActions } from "@/components/factories/FactoryTopActions";
 import { BatchCard } from "@/components/factories/BatchCard";
 import { useFactoryData } from "@/components/factories/FactoryDataProvider";
@@ -56,8 +57,9 @@ export default function FactoriesPage() {
         <Link href="/" className="text-sm font-semibold text-neutral-400">
           ← الرئيسية
         </Link>
-        <InvareMark size={24} />
+        <InvareMark size={30} />
       </div>
+      <PortalSwitcher />
       <FactoryTopActions />
 
       <div className="mx-auto flex w-full max-w-md flex-1 flex-col gap-6 px-5 py-6">

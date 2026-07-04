@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import Link from "next/link";
 import dynamic from "next/dynamic";
 import { InvareMark } from "@/components/InvareMark";
+import { PortalSwitcher } from "@/components/PortalSwitcher";
 import { CompanyCard } from "@/components/regulators/CompanyCard";
 import { useObjections } from "@/components/shared/ObjectionsProvider";
 import { usePickupRequests } from "@/components/shared/PickupRequestsProvider";
@@ -102,8 +103,9 @@ export default function RegulatorsPage() {
         <Link href="/" className="text-sm font-semibold text-neutral-400">
           ← الرئيسية
         </Link>
-        <InvareMark size={24} />
+        <InvareMark size={30} />
       </div>
+      <PortalSwitcher />
 
       <div className="mx-auto hidden w-full max-w-3xl flex-col gap-1 px-5 pt-6 print:flex">
         <h1 className="text-xl font-extrabold text-neutral-900">

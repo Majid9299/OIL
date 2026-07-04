@@ -3,6 +3,7 @@ import { GeneratorFlow } from "@/components/generators/GeneratorFlow";
 import { GeneratorTopActions } from "@/components/generators/GeneratorTopActions";
 import { RoleSwitcher } from "@/components/generators/RoleSwitcher";
 import { InvareMark } from "@/components/InvareMark";
+import { PortalSwitcher } from "@/components/PortalSwitcher";
 
 export default function GeneratorsPage() {
   return (
@@ -11,8 +12,9 @@ export default function GeneratorsPage() {
         <Link href="/" className="text-sm font-semibold text-neutral-400">
           ← الرئيسية
         </Link>
-        <InvareMark size={24} />
+        <InvareMark size={30} />
       </div>
+      <PortalSwitcher />
       <div className="flex justify-center border-b border-neutral-200 bg-white px-5 py-2.5">
         <RoleSwitcher />
       </div>

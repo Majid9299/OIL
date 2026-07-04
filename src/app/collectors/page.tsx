@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import dynamic from "next/dynamic";
 import { InvareMark } from "@/components/InvareMark";
+import { PortalSwitcher } from "@/components/PortalSwitcher";
 import { CollectorRoleSwitcher } from "@/components/collectors/CollectorRoleSwitcher";
 import { CollectorTopActions } from "@/components/collectors/CollectorTopActions";
 import { PickupRequestCard } from "@/components/collectors/PickupRequestCard";
@@ -76,8 +77,9 @@ export default function CollectorsPage() {
         <Link href="/" className="text-sm font-semibold text-neutral-400">
           ← الرئيسية
         </Link>
-        <InvareMark size={24} />
+        <InvareMark size={30} />
       </div>
+      <PortalSwitcher />
       <div className="flex justify-center border-b border-neutral-200 bg-white px-5 py-2.5">
         <CollectorRoleSwitcher />
       </div>
